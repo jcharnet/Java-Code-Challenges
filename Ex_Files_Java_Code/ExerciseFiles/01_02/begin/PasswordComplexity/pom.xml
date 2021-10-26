@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.linkedin-learning</groupId>
-  <artifactId>EvenOrOdd</artifactId>
+  <artifactId>PasswordComplexity</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
@@ -44,7 +44,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>3.0.0</version>
             <configuration>
-                <mainClass>EvenOrOdd</mainClass>
+                <mainClass>PasswordComplexity</mainClass>
             </configuration>
         </plugin>
       </plugins>
