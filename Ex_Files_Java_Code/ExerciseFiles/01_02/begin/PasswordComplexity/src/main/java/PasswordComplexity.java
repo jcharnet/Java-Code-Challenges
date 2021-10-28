@@ -3,10 +3,35 @@ import java.util.Scanner;
 public class PasswordComplexity {
 
     public static boolean isPasswordComplex(String password) {
-        return hasMinimumLength(password) && 
+        String regExp = new StringBuffer()
+            .append(getNumberRegExp())
+            .append(getLowerCaseRegExp())
+            .append(getUpperCaseRegExp())
+            .append(getMinimumLengthRegExp()).toString();
+        
+        return password.matches(regExp);
+
+        /*return hasMinimumLength(password) && 
         hasOneUpperCaseLetter(password) &&
         hasOneLowerCaseLetter(password) &&
         hasOneNumber(password);
+        */
+    }
+
+    private static String getMinimumLengthRegExp() {
+        return ".{6,}";
+    }
+    
+    private static String getUpperCaseRegExp() {
+        return "(?=.*[A-Z])";
+    }
+
+    private static String getLowerCaseRegExp() {
+        return "(?=.*[a-z])";
+    }
+
+    private static String getNumberRegExp() {
+        return "(?=.*[\\d])";
     }
 
     private static boolean hasMinimumLength(String password) {
